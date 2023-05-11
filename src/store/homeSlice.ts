@@ -1,12 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
-export interface CounterState {
+export interface HomeState {
   url: object,
   genres: object
 }
 
-const initialState: CounterState = {
+const initialState: HomeState = {
   url: {},
   genres: {}
 }
