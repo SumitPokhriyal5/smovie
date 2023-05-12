@@ -5,6 +5,8 @@ import { useSelector } from 'react-redux'
 
 import useFetch from "../../../hooks/useFetch";
 import { RootState } from "../../../store/store";
+import Img from "../../../components/lazyLoadImage/img";
+import ContentWrapper from "../../../components/contentWrapper/ContentWrapper";
 
 function HeroBanner() {
   const [background, setBackground] = useState<string>("");
@@ -27,10 +29,13 @@ function HeroBanner() {
 
   return (
     <div className="heroBanner">
-      <div className="backdrop-img">
-        
-      </div>
-      <div className="wrapper">
+      {!loading && <div className="backdrop-img">
+        <Img src={background}/>
+      </div>}
+
+      <div className="opacity-layer"></div>
+
+      <ContentWrapper>
         <div className="heroBannerContent">
           <span className="title">Welcome</span>
           <span className="subtitle">
@@ -48,7 +53,10 @@ function HeroBanner() {
             <button>Search</button>
           </div>
         </div>
-      </div>
+      </ContentWrapper>
+
+
+     
     </div>
   );
 }
