@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import { IMovieData } from '../typescript/Results'
+import { IBackgroundImages } from '../typescript/Results'
 
 export interface HomeState {
-  url: IMovieData,
+  url: IBackgroundImages | object,
   genres: object
 }
 

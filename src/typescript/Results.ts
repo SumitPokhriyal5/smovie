@@ -21,3 +21,9 @@ export interface IMovieData {
     total_pages: number;
     total_results: number;
 }
+
+export interface IBackgroundImages {
+    backdrop: string;
+    poster: string;
+    profile: string;
+}

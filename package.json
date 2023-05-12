@@ -10,12 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "@reduxjs/toolkit": "^1.9.1",
     "axios": "^1.2.2",
     "dayjs": "^1.11.7",
+    "react": "^18.2.0",
     "react-circular-progressbar": "^2.1.0",
+    "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
     "react-infinite-scroll-component": "^6.1.0",
     "react-lazy-load-image-component": "^1.5.6",
@@ -28,6 +28,7 @@
   "devDependencies": {
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
+    "@types/react-lazy-load-image-component": "^1.5.3",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1",
     "@vitejs/plugin-react": "^4.0.0",
