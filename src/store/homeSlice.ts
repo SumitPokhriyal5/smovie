@@ -1,8 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
+import { IMovieData } from '../typescript/Results'
 
 export interface HomeState {
-  url: object,
+  url: IMovieData,
   genres: object
 }
 

@@ -17,7 +17,7 @@ export const fetchDataFromApi = async ( url : string , params? : string ) : Prom
             params,
         })
         return data
-    }catch(err : any){
+    }catch(err:any){
         console.log(err)
         return err;
     }

@@ -8,28 +8,30 @@ import { RootState } from "./store/store";
 // pages and components import :-
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
-import Home from "./pages/home/Home";
-import Details from "./pages/details/Details";
-import SearchResult from "./pages/searchResults/SearchResult";
-import Explore from "./pages/explore/Explore";
-import PageNotFound from "./pages/404/PageNotFound";
+import AllRoutes from "./AllRoutes/AllRoutes";
 
 function App() {
   const { url } = useSelector((state: RootState) => state.home);
   const dispatch = useDispatch();
-console.log(url)
+  console.log(url);
   useEffect(() => {
-    apiTesting();
+    fetchApiConfig();
   }, []);
 
-  const apiTesting = () => {
-    fetchDataFromApi("/movie/popular").then((res) => {
+  const fetchApiConfig = () => {
+    fetchDataFromApi("/configuration").then((res) => {
       console.log(res);
       dispatch(getApiConfiguration(res));
     });
   };
 
-  return <div className="App">{url?.total_pages}</div>;
+  return (
+    <>
+      {/* <Header /> */}
+      <AllRoutes />
+      {/* <Footer /> */}
+    </>
+  );
 }
 
 export default App;
