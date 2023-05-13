@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, FC } from "react";
 import { HiOutlineSearch } from "react-icons/hi";
 import { SlMenu } from "react-icons/sl";
 import { VscChromeClose } from "react-icons/vsc";
@@ -9,8 +9,8 @@ import "./style.scss";
 import ContentWrapper from "../contentWrapper/ContentWrapper";
 import logo from "../../assets/smovie-logo-text.png";
 
-const Header = () => {
-  const [show, setShow] = useState("top");
+const Header: FC = () => {
+  const [show, setShow] = useState<"top" | "show" | "hide">("top");
   const [lastScrollY, setLastScrollY] = useState(0);
   const [mobileMenu, setMobileMenu] = useState(false);
   const [query, setQuery] = useState("");
@@ -81,7 +81,7 @@ const Header = () => {
             Movies
           </li>
           <li className="menuItem" onClick={() => navigationMandler("tv")}>
-            TV Showss
+            TV Shows
           </li>
           <li className="menuItem">
             <HiOutlineSearch onClick={openSearch} />

@@ -37,7 +37,7 @@ function App() {
     <>
       <Header />
       <AllRoutes />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
