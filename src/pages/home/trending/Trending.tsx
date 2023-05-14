@@ -7,7 +7,7 @@ import Carousel from '../../../components/carousel/Carousel';
 const Trending = () => {
   const [endpoint, setEndpoint] = useState<'day' | 'week'>('day');
   const { data, loading } = useFetch(`/trending/all/${endpoint}`);
-  const isLoading = Boolean(loading); // Convert loading to a boolean
+  const isLoading = Boolean(loading); 
 
   const onTabChange = (tab: string, index: number): void => {
     setEndpoint(tab === 'Day' ? 'day' : 'week');
@@ -19,7 +19,7 @@ const Trending = () => {
         <span className="carouselTitle">Trending</span>
         <SwitchTabs data={['Day', 'Week']} onTabChange={onTabChange} />
       </ContentWrapper>
-      <Carousel data={data?.results} loading={isLoading} /> // Use the converted isLoading value
+      <Carousel data={data?.results} loading={isLoading} /> 
     </div>
   );
 };

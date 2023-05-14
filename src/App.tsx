@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 import { fetchDataFromApi } from "./utils/api";
 import { useSelector, useDispatch } from "react-redux";
@@ -10,7 +10,7 @@ import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import AllRoutes from "./AllRoutes/AllRoutes";
 
-function App() {
+const App: React.FC = () => {
   const { url } = useSelector((state: RootState) => state.home);
   const dispatch = useDispatch();
   console.log(url);
