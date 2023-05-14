@@ -15,6 +15,7 @@ import "./style.scss";
 import { RootState } from "../../store/store";
 import { IMovies } from "../../typescript/Results";
 import CircleRating from "../circleRating/CircleRating";
+import Genres from "../genres/Genres";
 
 interface CarouselProps {
   data: IMovies[] | undefined;
@@ -67,6 +68,7 @@ const Carousel: React.FC<CarouselProps> = ({ data, loading }) => {
                     <CircleRating
                       rating={Number(item.vote_average.toFixed(1))}
                     />
+                    <Genres data={item.genre_ids.slice(0,2)} />
                   </div>
                   <div className="textBlock">
                     <span className="title">{item.title || item.name}</span>
