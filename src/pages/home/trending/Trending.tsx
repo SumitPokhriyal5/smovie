@@ -9,7 +9,7 @@ const Trending = () => {
   const { data, loading } = useFetch(`/trending/all/${endpoint}`);
   const isLoading = Boolean(loading); 
 
-  const onTabChange = (tab: string, index: number): void => {
+  const onTabChange = (tab: string): void => {
     setEndpoint(tab === 'Day' ? 'day' : 'week');
   };
 
@@ -19,7 +19,7 @@ const Trending = () => {
         <span className="carouselTitle">Trending</span>
         <SwitchTabs data={['Day', 'Week']} onTabChange={onTabChange} />
       </ContentWrapper>
-      <Carousel data={data?.results} loading={isLoading} /> 
+      <Carousel data={data?.results} loading={isLoading} endpoint={endpoint} /> 
     </div>
   );
 };
