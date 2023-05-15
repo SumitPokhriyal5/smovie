@@ -29,6 +29,16 @@ const Carousel: React.FC<CarouselProps> = ({ data, loading }) => {
 
   const navigation = (dir: "left" | "right") => {
     // Implementation for navigating carousel
+    const container = carouselContainer.current;
+
+    if(!container)return;
+
+    const scrollAmount = dir === "left" ? container.scrollLeft - ( container.offsetWidth + 20 ) : container.scrollLeft + ( container.offsetWidth + 20 );
+
+    container.scrollTo({
+      left: scrollAmount,
+      behavior: "smooth"
+    })
   };
 
   const skItem = () => {
@@ -56,13 +66,13 @@ const Carousel: React.FC<CarouselProps> = ({ data, loading }) => {
           onClick={() => navigation("right")}
         />
         {!loading ? (
-          <div className="carouselItems">
+          <div className="carouselItems" ref={carouselContainer}>
             {data?.map((item: IMovies) => {
               const posterUrl = item.poster_path
                 ? url.poster + item.poster_path
                 : PosterFallback;
               return (
-                <div className="carouselItem" key={item.id}>
+                <div className="carouselItem" key={item.id} onClick={() => navigate(`/${item.media_type}/${item.id}`)}>
                   <div className="posterBlock">
                     <Img src={posterUrl} />
                     <CircleRating
