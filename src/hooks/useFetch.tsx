@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { fetchDataFromApi } from "../utils/api";
-import { IMovieData } from "../typescript/Results";
+import { IMovieData, IMovies } from "../typescript/Results";
 const useFetch = (url:string) => {
-    const [data, setData] = useState<null | IMovieData>(null);
+    const [data, setData] = useState<null | IMovies >(null);
     const [loading, setLoading] = useState<null | boolean | string>(null);
     const [error, setError] = useState<null | string>(null);
 
@@ -12,7 +12,7 @@ const useFetch = (url:string) => {
         setError(null);
 
         fetchDataFromApi(url)
-            .then((res) => {
+            .then((res:any) => {
                 setLoading(false);
                 setData(res);
             })

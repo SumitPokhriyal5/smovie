@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import "./style.scss";
 import { RootState } from '../../store/store';
 interface IGenres {
-    data: number[]
+    data: number[] | undefined
 }
 
 const Genres: FC<IGenres> = ({data}) => {
