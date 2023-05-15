@@ -20,9 +20,10 @@ import Genres from "../genres/Genres";
 interface CarouselProps {
   data: IMovies[] | undefined;
   loading: boolean;
+  endpoint: string
 }
 
-const Carousel: React.FC<CarouselProps> = ({ data, loading }) => {
+const Carousel: React.FC<CarouselProps> = ({ data, loading , endpoint }) => {
   const carouselContainer = useRef<HTMLDivElement>(null);
   const { url } = useSelector((state: RootState) => state.home);
   const navigate = useNavigate();
@@ -72,7 +73,7 @@ const Carousel: React.FC<CarouselProps> = ({ data, loading }) => {
                 ? url.poster + item.poster_path
                 : PosterFallback;
               return (
-                <div className="carouselItem" key={item.id} onClick={() => navigate(`/${item.media_type}/${item.id}`)}>
+                <div className="carouselItem" key={item.id} onClick={() => navigate(`/${item.media_type || endpoint}/${item.id}`)}>
                   <div className="posterBlock">
                     <Img src={posterUrl} />
                     <CircleRating
