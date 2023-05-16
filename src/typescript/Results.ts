@@ -1,4 +1,3 @@
-import { ICastData } from "../pages/details/cast/Cast";
 
 export interface IMovies {
   adult: boolean;

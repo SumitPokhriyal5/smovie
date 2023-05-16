@@ -3,7 +3,7 @@ import { IBackgroundImages } from '../typescript/Results';
 
 export interface HomeState {
   url: IBackgroundImages | Record<string , never>;
-  genres: object;
+  genres: any;
 }
 
 const initialState: HomeState = {
