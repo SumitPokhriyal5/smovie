@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { ISearch } from '../pages/searchResults/SearchResult';
 
 const BASE_URL = "https://api.themoviedb.org/3";
 
@@ -10,7 +11,7 @@ const headers = {
 
 
 
-export const fetchDataFromApi = async ( url : string , params? : string ) : Promise<string> => {
+export const fetchDataFromApi = async ( url : string , params? : string ) : Promise<ISearch> => {
     try{
         const {data} = await axios.get(BASE_URL + url , {
             headers,
