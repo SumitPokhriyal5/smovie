@@ -1,3 +1,5 @@
+import { ICastData } from "../pages/details/cast/Cast";
+
 export interface IMovies {
   adult: boolean;
   backdrop_path: string;
@@ -24,6 +26,10 @@ export interface IMovies {
       name: string;
     }
   ];
+  profile_path:string;
+  cast: any;
+  results:any;
+  crew:any;
 }
 
 export interface IMovieData {
