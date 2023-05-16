@@ -19,12 +19,14 @@ import Genres from "../genres/Genres";
 
 interface CarouselProps {
   data: IMovies[] | undefined;
-  loading: boolean;
-  endpoint: string
+  loading: boolean | string | null;
+  endpoint: string | undefined;
+  title:string;
 }
 
-const Carousel: React.FC<CarouselProps> = ({ data, loading , endpoint }) => {
+const Carousel: React.FC<CarouselProps> = ({ data, loading , endpoint , title }) => {
   const carouselContainer = useRef<HTMLDivElement>(null);
+  console.log("title",title)
   const { url } = useSelector((state: RootState) => state.home);
   const navigate = useNavigate();
 
@@ -57,6 +59,7 @@ const Carousel: React.FC<CarouselProps> = ({ data, loading , endpoint }) => {
   return (
     <div className="carousel">
       <ContentWrapper>
+        {title && <div className="carouselTitle">{title}</div>}
         <BsFillArrowLeftCircleFill
           className="carouselLeftNav arrow"
           onClick={() => navigation("left")}

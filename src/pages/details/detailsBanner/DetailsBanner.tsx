@@ -50,8 +50,6 @@ interface IDetailsBanner{
 const DetailsBanner: FC<IDetailsBanner> = ({ video, crew }) => {
     const [show , setShow] = useState<string | boolean>(false);
     const [videoId , setVideoId] = useState<string | null>(null)
-    console.log('video', video);
-    console.log('crew',crew)
 
 
   const { mediaType, id } = useParams();
@@ -72,7 +70,7 @@ const DetailsBanner: FC<IDetailsBanner> = ({ video, crew }) => {
     return `${hours}h${minutes > 0 ? ` ${minutes}m` : ""}`;
   };
 
-  console.log(data);
+
   return (
     <div className="detailsBanner">
       {!loading ? (

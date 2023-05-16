@@ -16,9 +16,8 @@ type Genre = {
 }
 
 const App: React.FC = () => {
-  const { url } = useSelector((state: RootState) => state.home);
+  // const { url } = useSelector((state: RootState) => state.home);
   const dispatch = useDispatch();
-  console.log(url);
   useEffect(() => {
     fetchApiConfig();
     genresCall();
@@ -26,8 +25,6 @@ const App: React.FC = () => {
 
   const fetchApiConfig = () => {
     fetchDataFromApi("/configuration").then((res:any) => {
-      console.log(res);
-
       const url = {
         backdrop: res.images.secure_base_url + "original",
         poster: res.images.secure_base_url + "original",

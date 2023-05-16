@@ -9,8 +9,6 @@ interface IGenres {
 
 const Genres: FC<IGenres> = ({data}) => {
     const { genres } = useSelector((state:RootState) => state.home)
-    console.log("data", data)
-    console.log("genres",genres)
   return (
     <div className='genres'>
         {data?.map((g:number) => {
