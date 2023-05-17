@@ -2,7 +2,7 @@
 SMovie: A user-friendly website to explore favorite movies and TV shows. Built in 5 days with React, TypeScript, SCSS, and TMDB API. Effortlessly discover and enjoy a wide range of content. Ideal for movie enthusiasts and TV lovers.
 
 
-## Features
+## 🚀 Features
 - Browse and search for movies based on genres, popularity, and other criteria.
 - Sort movies by popularity, rating, release date, and more.
 - Infinite scrolling for seamless loading of movie results.
