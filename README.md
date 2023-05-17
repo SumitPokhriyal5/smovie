@@ -1,8 +1,8 @@
 # SMovie
 SMovie: A user-friendly website to explore favorite movies and TV shows. Built in 5 days with React, TypeScript, SCSS, and TMDB API. Effortlessly discover and enjoy a wide range of content. Ideal for movie enthusiasts and TV lovers.
 
-## Features
 
+## Features
 - Browse and search for movies based on genres, popularity, and other criteria.
 - Sort movies by popularity, rating, release date, and more.
 - Infinite scrolling for seamless loading of movie results.
@@ -11,10 +11,9 @@ SMovie: A user-friendly website to explore favorite movies and TV shows. Built i
 - Play movie trailers using the integrated React Player component.
 - Comprehensive movie details including cast, crew, ratings, and release information.
 - Utilizes Redux for efficient state management.
-- 
+
 
 ## Dependencies
-
 - [Redux Toolkit](https://www.npmjs.com/package/@reduxjs/toolkit) - Redux state management library.
 - [React Redux](https://www.npmjs.com/package/react-redux) - Official React bindings for Redux.
 - [Axios](https://www.npmjs.com/package/axios) - Promise-based HTTP client for API requests.
