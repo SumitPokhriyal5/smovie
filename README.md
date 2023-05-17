@@ -28,10 +28,10 @@ SMovie: A user-friendly website to explore favorite movies and TV shows. Built i
 
 ## Screenshots
 
-![Home Page](public/screenshots/home.png)
-            (public/screenshots/home2.png)
-![Movie Details Page](public/screenshots/details.png)
-                     (public/screenshots/details2.png)
+![Home Page](./public/screenshots/home.png)
+![Home Page](./public/screenshots/home2.png)
+![Movie Details Page](./public/screenshots/details.png)
+![Movie Details Page](./public/screenshots/details2.png)
 ...
 
 
