@@ -26,7 +26,6 @@ interface CarouselProps {
 
 const Carousel: React.FC<CarouselProps> = ({ data, loading , endpoint , title }) => {
   const carouselContainer = useRef<HTMLDivElement>(null);
-  console.log("title",title)
   const { url } = useSelector((state: RootState) => state.home);
   const navigate = useNavigate();
 
@@ -80,9 +79,9 @@ const Carousel: React.FC<CarouselProps> = ({ data, loading , endpoint , title })
                   <div className="posterBlock">
                     <Img src={posterUrl} />
                     <CircleRating
-                      rating={Number(item.vote_average.toFixed(1))}
+                      rating={item.vote_average ? Number(item?.vote_average?.toFixed(1)) : 0}
                     />
-                    <Genres data={item.genre_ids.slice(0,2)} />
+                    { <Genres data={item.genre_ids ? item.genre_ids.slice(0,2) : null} />}
                   </div>
                   <div className="textBlock">
                     <span className="title">{item.title || item.name}</span>

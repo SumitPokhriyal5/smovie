@@ -19,7 +19,6 @@ interface IMovieCard{
 
 const MovieCard : FC<IMovieCard> = ({ data, fromSearch, mediaType }) => {
     const { url } = useSelector((state:RootState) => state.home);
-    console.log("data",data)
     const navigate = useNavigate();
     const posterUrl = data.poster_path
         ? url.poster + data.poster_path
