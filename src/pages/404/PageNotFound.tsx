@@ -1,9 +1,7 @@
-import React from 'react';
 import './style.scss';
 
-type Props = {}
 
-function PageNotFound({}: Props) {
+function PageNotFound() {
   return (
     <div>PageNotFound</div>
   )
