@@ -26,5 +26,12 @@ SMovie: A user-friendly website to explore favorite movies and TV shows. Built i
 - [React Lazy Load Image](https://www.npmjs.com/package/react-lazy-load-image-component) - Lazy loading of images in React.
 
 
+## Screenshots
+
+![Home Page](public/screenshots/home.png)
+            (public/screenshots/home2.png)
+![Movie Details Page](public/screenshots/details.png)
+                     (public/screenshots/details2.png)
+...
 
 
