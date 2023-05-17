@@ -25,7 +25,6 @@ SMovie: A user-friendly website to explore favorite movies and TV shows. Built i
 - [React Circular Progressbar](https://www.npmjs.com/package/react-circular-progressbar) - Circular progress bar component for React.
 - [React Infinite Scroll](https://www.npmjs.com/package/react-infinite-scroll-component) - Infinite scroll component for React.
 - [React Lazy Load Image](https://www.npmjs.com/package/react-lazy-load-image-component) - Lazy loading of images in React.
-- 
 
 
 
