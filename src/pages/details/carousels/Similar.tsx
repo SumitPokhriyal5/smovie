@@ -9,7 +9,7 @@ interface ISimilar {
 }
 
 const Similar: FC<ISimilar> = ({ mediaType, id }) => {
-    const { data, loading, error } = useFetch(`/${mediaType}/${id}/similar`);
+    const { data, loading } = useFetch(`/${mediaType}/${id}/similar`);
 
     const title = mediaType === "tv" ? "Similar TV Shows" : "Similar Movies";
 

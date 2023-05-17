@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import InfiniteScroll from "react-infinite-scroll-component";
-import Select from "react-select"
+import Select from "react-select";
 
 import "./style.scss";
 
@@ -10,16 +10,26 @@ import { fetchDataFromApi } from "../../utils/api";
 import ContentWrapper from "../../components/contentWrapper/ContentWrapper";
 import MovieCard from "../../components/movieCard/MovieCard";
 import Spinner from "../../components/spinner/Spinner";
-import { ISearch, ISearchResults } from "../searchResults/SearchResult";
+import { ISearchResults } from "../searchResults/SearchResult";
 
-let filters: { [key: string]: string } = {};
-
-interface IOption {
+interface FilterOptions {
   value: string;
   label: string;
 }
 
-const sortbyData: IOption[] = [
+interface Genre {
+  id: number | string;
+  name: string;
+}
+
+interface MovieResult {
+  results: ISearchResults[];
+  total_pages: number;
+}
+
+let filters: any = {};
+
+const sortbyData: FilterOptions[] = [
   { value: "popularity.desc", label: "Popularity Descending" },
   { value: "popularity.asc", label: "Popularity Ascending" },
   { value: "vote_average.desc", label: "Rating Descending" },
@@ -30,18 +40,18 @@ const sortbyData: IOption[] = [
 ];
 
 const Explore: React.FC = () => {
-  const [data, setData] = useState<ISearch | null>(null);
-  const [pageNum, setPageNum] = useState(1);
-  const [loading, setLoading] = useState(false);
-  const [genre, setGenre] = useState<IOption[] | IOption | null>(null);
-  const [sortby, setSortby] = useState<IOption | IOption[] | null>(null);
+  const [data, setData] = useState<MovieResult | null>(null);
+  const [pageNum, setPageNum] = useState<number>(1);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [genre, setGenre] = useState<Genre[] | null>(null);
+  const [sortby, setSortby] = useState<FilterOptions | null>(null);
   const { mediaType } = useParams<{ mediaType: string }>();
 
   const { data: genresData } = useFetch(`/genre/${mediaType}/list`);
 
   const fetchInitialData = () => {
     setLoading(true);
-    fetchDataFromApi(`/discover/${mediaType}`, filters).then((res: ISearch) => {
+    fetchDataFromApi(`/discover/${mediaType}`, filters).then((res: MovieResult) => {
       setData(res);
       setPageNum((prev) => prev + 1);
       setLoading(false);
@@ -50,7 +60,7 @@ const Explore: React.FC = () => {
 
   const fetchNextPageData = () => {
     fetchDataFromApi(`/discover/${mediaType}?page=${pageNum}`, filters).then(
-      (res: ISearch) => {
+      (res: MovieResult) => {
         if (data?.results) {
           setData({
             ...data,
@@ -73,23 +83,21 @@ const Explore: React.FC = () => {
     fetchInitialData();
   }, [mediaType]);
 
-  const onChange = (
-    selectedItems: IOption[] | IOption,
-    action: { name: string; action: string }
-  ) => {
+  const onChange = (selectedItems:any, action: any) => {
     if (action.name === "sortby") {
-      setSortby(selectedItems as IOption);
+      setSortby(selectedItems as FilterOptions);
       if (action.action !== "clear") {
-        filters.sort_by = (selectedItems as IOption).value;
+        filters.sort_by = (selectedItems as FilterOptions).value;
       } else {
         delete filters.sort_by;
       }
     }
 
     if (action.name === "genres") {
-      setGenre(selectedItems as IOption[]);
+      setGenre(selectedItems as Genre[]);
       if (action.action !== "clear") {
-        const genreId = (selectedItems as IOption[]).map((g) => g.value).join(",");
+        let genreId:any = (selectedItems as Genre[]).map((g) => g.id);
+        genreId = JSON.stringify(genreId).slice(1, -1);
         filters.with_genres = genreId;
       } else {
         delete filters.with_genres;
@@ -139,12 +147,12 @@ const Explore: React.FC = () => {
             {data && data?.results?.length > 0 ? (
               <InfiniteScroll
                 className="content"
-                dataLength={data?.results?.length || 0}
+                dataLength={data.results.length || 0}
                 next={fetchNextPageData}
-                hasMore={pageNum <= data?.total_pages}
+                hasMore={pageNum <= data.total_pages}
                 loader={<Spinner />}
               >
-                {data?.results?.map((item: ISearchResults, index: number) => {
+                {data?.results.map((item, index) => {
                   if (item.media_type === "person") return null;
                   return (
                     <MovieCard

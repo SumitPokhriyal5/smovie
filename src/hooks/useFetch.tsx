@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { fetchDataFromApi } from "../utils/api";
-import { IMovieData, IMovies } from "../typescript/Results";
+import { IMovies } from "../typescript/Results";
 const useFetch = (url:string) => {
-    const [data, setData] = useState<null | IMovies >(null);
+    const [data, setData] = useState<IMovies | null >(null);
     const [loading, setLoading] = useState<null | boolean | string>(null);
     const [error, setError] = useState<null | string>(null);
 

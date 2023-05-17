@@ -21,7 +21,7 @@ interface CarouselProps {
   data: IMovies[] | undefined;
   loading: boolean | string | null;
   endpoint: string | undefined;
-  title:string;
+  title?:string;
 }
 
 const Carousel: React.FC<CarouselProps> = ({ data, loading , endpoint , title }) => {

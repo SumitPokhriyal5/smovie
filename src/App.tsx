@@ -1,9 +1,8 @@
 import { useEffect } from "react";
 
 import { fetchDataFromApi } from "./utils/api";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getApiConfiguration, getGenres } from "./store/homeSlice";
-import { RootState } from "./store/store";
 
 // pages and components import :-
 import Header from "./components/header/Header";
