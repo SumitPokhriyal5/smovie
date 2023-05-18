@@ -26,12 +26,24 @@ SMovie: A user-friendly website to explore favorite movies and TV shows. Built i
 - [React Lazy Load Image](https://www.npmjs.com/package/react-lazy-load-image-component) - Lazy loading of images in React.
 
 
-## Screenshots
 
-![Home Page](./public/screenshots/home.png)
-![Home Page](./public/screenshots/home2.png)
-![Movie Details Page](./public/screenshots/details.png)
-![Movie Details Page](./public/screenshots/details2.png)
+## Home Page
+ ![home](https://github.com/SumitPokhriyal5/smovie/assets/112632728/5e86183f-801a-4a8b-8648-4182f8e976d8)
+ ![home2](https://github.com/SumitPokhriyal5/smovie/assets/112632728/ff7fe89f-1164-469d-a6c8-e7f914e14908)
+ 
+## Details Page
+ ![details](https://github.com/SumitPokhriyal5/smovie/assets/112632728/56228c63-9e3f-42b3-a456-39cf8334793f)
+ ![details2](https://github.com/SumitPokhriyal5/smovie/assets/112632728/70705a81-6a35-4a00-98be-0a1cea4fd34e)
+ 
+## Video Player
+ ![video](https://github.com/SumitPokhriyal5/smovie/assets/112632728/e32c0bb8-1e27-43d0-acc3-69c4067b44b2)
+
+## Search Page
+ ![search](https://github.com/SumitPokhriyal5/smovie/assets/112632728/95e15fb2-bd7b-4e36-b599-283576fc4374)
+
+## Explore Movies or TV Shows
+ ![explore](https://github.com/SumitPokhriyal5/smovie/assets/112632728/b023b2fd-7808-4a43-a30f-7ae07f71de35)
+
 ...
 
 
