@@ -50,7 +50,7 @@ function HeroBanner() {
                 setQuery(e.target.value)
               }
             />
-            <button>Search</button>
+            <button onClick={() => navigate(`/search/${query}`)}>Search</button>
           </div>
         </div>
       </ContentWrapper>
