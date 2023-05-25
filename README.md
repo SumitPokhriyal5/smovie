@@ -29,11 +29,11 @@ SMovie: A user-friendly website to explore favorite movies and TV shows. Built i
 
 ## Home Page
  ![home](https://github.com/SumitPokhriyal5/smovie/assets/112632728/5e86183f-801a-4a8b-8648-4182f8e976d8)
- ![home2](https://github.com/SumitPokhriyal5/smovie/assets/112632728/ff7fe89f-1164-469d-a6c8-e7f914e14908)
+ ![home-explore](https://github.com/SumitPokhriyal5/smovie/assets/112632728/ff7fe89f-1164-469d-a6c8-e7f914e14908)
  
 ## Details Page
  ![details](https://github.com/SumitPokhriyal5/smovie/assets/112632728/56228c63-9e3f-42b3-a456-39cf8334793f)
- ![details2](https://github.com/SumitPokhriyal5/smovie/assets/112632728/70705a81-6a35-4a00-98be-0a1cea4fd34e)
+ ![details-explore](https://github.com/SumitPokhriyal5/smovie/assets/112632728/70705a81-6a35-4a00-98be-0a1cea4fd34e)
  
 ## Video Player
  ![video](https://github.com/SumitPokhriyal5/smovie/assets/112632728/e32c0bb8-1e27-43d0-acc3-69c4067b44b2)
