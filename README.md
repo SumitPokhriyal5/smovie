@@ -1,5 +1,5 @@
 # SMovie
-SMovie: A user-friendly website to explore favorite movies and TV shows. Built in 5 days with React, TypeScript, SCSS, and TMDB API. Effortlessly discover and enjoy a wide range of content. Ideal for movie enthusiasts and TV lovers.
+A user-friendly website to explore favorite movies and TV shows. Built in 5 days with React, TypeScript, SCSS, and TMDB API. Effortlessly discover and enjoy a wide range of content. Ideal for movie enthusiasts and TV lovers.
 
 
 ## 🚀 Features
